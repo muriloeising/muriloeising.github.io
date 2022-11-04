@@ -6,26 +6,39 @@
         <title>murilo1site</title>
         <script src="index.js"></script>
         <script src="bd.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>olá mundo</h1>
-        <div>
-            <h3>conversor celsius p/ fahrenheit</h3>
-            <input
-                type="number"
-                placeholder="temperatura em celcius"
-                id="temperatura-celcius"
-            />
-            <input
-                type="button"
-                value="converter!"
-                onclick="converteParaFarenheit()"
-            />
-            <input type="text" id="resultado-fahrenheit" readonly />
-        </div>
-        <div>
-            <input type="text" id="nome-usuario" placeholder="nome" />
-            <input type="button" value="salvar!" onclick="salvarNome()" />
-        </div>
+        <header>
+            <h1>Converter Graus</h1>
+        </header>
+        <main>
+            <section>
+                <h3>conversor celsius p/ fahrenheit</h3>
+                <input
+                    type="number"
+                    placeholder="temperatura em celcius"
+                    id="temperatura-celcius"
+                />
+                <input
+                    type="button"
+                    value="converter!"
+                    onclick="converteParaFarenheit()"
+                />
+                <input type="text" id="resultado-fahrenheit" readonly />
+            </section>
+            <section>
+                <h3>registro BD</h3>
+                <input type="text" id="nome-usuario" placeholder="nome" />
+                <input type="text" id="idade-usuario" placeholder="idade" />
+                <input type="button" value="salvar!" onclick="salvarinfo()" />
+            </section>
+            <input type="text" id="pesquisa-nome-usuario" placeholder="nome"
+        <h3>pesquisa BD</h3>
+        <input
+        type="button"
+        value="pesquisar!"
+        onclick="pesquisaPorNome()"
+        </main>
     </body>
 </html>
