@@ -1,37 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
 
 * {
-margin: 0px;
-padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
-
+h1 {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+    font-family: "kanit", sans-serif;
+}
 header {
- background-color: rgb(132, 186, 186);   
- h1{
-     border:1px solid black
-     margin:10px;
-     padding : 20px;
-     font-family: "kanit", sans-serif;
-    }
+    background-color: rgb(132, 186, 186);
 }
 header:hover {
-    background-color: rgba(203, 63, 63, 0.243);
+    background-color: rgba(238, 71, 49, 0.243);
 }
 main {
     display: flex;
     margin: 0px 50px;
     /* margin : c 0px d 10px b 20px e 80px; */
-    flex-wrap :  wrap
+    flex-wrap: wrap;
 }
 section {
-    background-color :rgb(250, 236, 115);
+    background-color: rgb(63, 147, 196);
     margin: 10px;
     padding: 10px;
-    border-radius:5px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-input{
-   text-align: center;
+input {
+    text-align: center;
 }
