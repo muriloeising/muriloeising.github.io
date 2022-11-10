@@ -1,5 +1,10 @@
 var bd = openDatabase("minhaBD", "1.0", "Meu Banco de Dados", 4080);
 
+let listaNomes = [];
+let listaIdades = [];
+
+
+
 bd.transaction(function (criar) {
     criar.executeSql("CREATE TABLE nomes (nome TEXT, idade INTEGER)");
 });
@@ -57,9 +62,30 @@ function exibeBD() {
                     item = resultados.rows.item(i);
                     document.getElementById(
                         "lista-bd"
-                    ).innerHTML += `<p>Nome: ${item.nome},${item.idade} anos</p>`;
+                    ).innerHTML += `<p onclick="mostrarCartaoAltera('${item.nome}',${item.idade})">Nome: ${item.nome},${item.idade} anos</p>`;
                 }
             }
         );
     });
 }
+
+function AlterarInfo(){
+    const novoNome = document.getElementById("nome-altera").value;
+    const novaIdade = parseInt(document.getElementById("idade-altera").value);
+
+    bd.transaction(function(altera) {
+        altera.executeSql(`UPDATE nomes SET nome="${novoNome}", idade=${novaIdade} WHERE nome="${nomeAtualParaEditar}" AND idade=${IdadeAtualParaEditar} `);
+    })
+    exibeBD();
+};
+
+
+function ExcluiInfo(){
+    bd.transaction(function(excluir) {
+        excluir.executeSql(`DELETE FROM nomes WHERE nome="${nomeAtualParaEditar}" AND idade=${IdadeAtualParaEditar} `);
+    })
+    exibeBD();
+};
+
+
+
